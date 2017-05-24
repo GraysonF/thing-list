@@ -6,7 +6,9 @@ import Actions from './Actions'
 
 class Thing extends Component {
   componentDidMount() {
-    this.nameInput.htmlEl.focus()
+    if (!this.nameInput.htmlEl.textContent) {
+      this.nameInput.htmlEl.focus()
+    }
   }
 
   updateName = (ev) => {
